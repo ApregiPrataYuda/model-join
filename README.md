@@ -20,3 +20,13 @@ class Product_m extends CI_Model
     return $query;
   }
   ?>
+  
+  
+  //
+  public function update_stock_in($data)
+  {
+    $qty = $data['qty'];
+    $id = $data['product_id'];
+    $sql = "UPDATE tb_product SET stock = stock + '$qty' WHERE product_id  = '$id' ";
+    $this->db->query($sql);
+  }
